@@ -1,0 +1,37 @@
+.content{
+
+    font-family:'Lato', sans-serif;
+    font-variant:small-caps;
+}
+.fontLarge{
+    font-size: 3.5em;
+}
+
+
+/* Fix bugs in the autocomplete plugins*/
+.autocomplete li{
+  text-align: left;
+  list-style:none;
+  width: 106.5%;
+  margin-left: -6.5%;
+  padding:0.4em;
+  background-color: #fff;
+}
+
+.autocomplete li.active{
+  width: 106.5%;
+  margin-left: -6.5%;
+  background-color: #4bf;
+}
+
+/*.autocomplete ul{
+  width: 106.5%;
+  margin-left: -6.5%;
+}*/
+
+@media (max-width: 388px) {
+    .autocomplete ul{
+      width: 106.5%;
+      margin-left: -6.5%;
+    }
+}

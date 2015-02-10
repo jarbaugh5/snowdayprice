@@ -32,6 +32,10 @@ snowApp.controller('SnowAppCtrl', function ($scope, $filter, GetData) {
         $scope.newSchoolList = $filter('filter')(Object.keys($scope.schoolDict), typed);
     };
 
+   $scope.isPositiveInteger = function (n) {
+        return 0 === n % (!isNaN(parseFloat(n)) && 0 <= ~~n);
+    }
+
     $scope.selectSchool = function (schoolName) {
         if ($scope.schoolDict[schoolName]) {
             $scope.selectedSchool = $scope.schoolDict[schoolName];
