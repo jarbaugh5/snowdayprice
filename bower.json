@@ -1,0 +1,26 @@
+{
+  "name": "snowday",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jarbaugh5/snowdayprice",
+  "authors": [
+    "Jon Arbaugh <jonathan.arbaugh@tufts.edu>"
+  ],
+  "description": "A calculator for lost tuition in the NorthEast after all of these snow days.",
+  "keywords": [
+    "snow",
+    "tuition",
+    "price",
+    "day",
+    "days",
+    "money"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
