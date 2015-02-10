@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,6 +89,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
 )
+
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.template.TemplateFilter',
+]
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
