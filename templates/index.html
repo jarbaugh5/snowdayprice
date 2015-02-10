@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Snowing Money Fast</title>
+    <title>Price My Snow Day</title>
 
     {% load staticfiles %}
     <!-- Bootstrap core CSS -->
@@ -48,9 +48,15 @@
 <!-- Begin page content -->
 <div class="container content" ng-controller="SnowAppCtrl">
     <div class="page-header">
-        <h1>Snowing Money Fast</h1>
+        <h1>Price My Snow Day</h1>
     </div>
-    <p class="lead">Calculate your lost tuition from these snowstorms!</p>
+    <p class="lead">
+        Calculate your lost tuition from these snowstorms!
+    </p>
+    <p class="lead">
+        Because the weather in the northeast has been crazy this semester.
+    </p>
+
 
     <div>
         <input class="form-control" type="text" placeholder="Number of Days Missed" ng-model="numDaysMissed"/>
@@ -86,6 +92,11 @@
         </div>
         <div class="col-md-6">
             <div class="fb-share-button" data-href="http://www.pricemysnowday.com" data-layout="button_count"></div>
+        </div>
+        <div class="col-md-12">
+            <small>Disclaimer! This is completely for lols. The numbers are based on a 12 (full) week semester for every
+            school. The site is meant as a joke and the numbers are not verified. The tuition data was downloaded
+            from The National Center For Education Statistics IPEDS Database.</small>
         </div>
     </div>
     <!-- /input-group -->
