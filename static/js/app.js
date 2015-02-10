@@ -5,7 +5,7 @@ var snowApp = angular.module('snowApp', ['autocomplete']);
 snowApp.service('GetData', function ($http) {
     return {
         'getSchoolData': function (cb) {
-            $http.get('static/json/college_data.json')
+            $http.get('getData')
                 .success(function(data) {
                     console.log(data);
                     cb(data);
