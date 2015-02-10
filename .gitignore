@@ -111,4 +111,8 @@ target/
 # The config file
 config/config.py
 
+# bower_components
+static/bower_components/
 
+# sqlite3
+*.sqlite3

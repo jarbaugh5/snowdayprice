@@ -2,13 +2,27 @@
 
 var snowApp = angular.module('snowApp', ['autocomplete']);
 
-snowApp.controller('SnowAppCtrl', function ($scope, $filter) {
-    $scope.schoolDict = {
-        'Tufts': 'a',
-        'Harvard': 'a',
-        'MIT': 'a',
-        'UMass Boston': 'a'
+snowApp.service('GetData', function ($http) {
+    return {
+        'getSchoolData': function (cb) {
+            $http.get('static/json/college_data.json')
+                .success(function(data) {
+                    console.log(data);
+                    cb(data);
+                })
+                .error(function(data) {
+                    console.log('Error getting data.');
+                });
+        }
     };
+});
+
+snowApp.controller('SnowAppCtrl', function ($scope, $filter, GetData) {
+    $scope.schoolDict = {};
+
+    GetData.getSchoolData(function (data) {
+        $scope.schoolDict = data;
+    });
 
     $scope.newSchoolList = [];
 
@@ -20,6 +34,7 @@ snowApp.controller('SnowAppCtrl', function ($scope, $filter) {
 
     $scope.selectSchool = function (schoolName) {
         if ($scope.schoolDict[schoolName]) {
+            $scope.selectedSchool = $scope.schoolDict[schoolName];
             console.log('School detected: ' + schoolName);
         }
     };

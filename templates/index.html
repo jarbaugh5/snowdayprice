@@ -43,9 +43,22 @@
     <p class="lead">Calculate your lost tuition from these snowstorms!</p>
 
     <div>
+        <input class="form-control" type="text" placeholder="Number of Days Missed" ng-model="numDaysMissed"/>
         <autocomplete data="newSchoolList" ng-model="schoolName"
                       attr-placeholder="University Name" on-type="updateSchools"
                       on-select="selectSchool"></autocomplete>
+        <div class="col-md-12">
+            <p>
+                Based on a 12 week semester...
+            </p>
+            <h2>You lost ${{ selectedSchool.tuition_and_fees / 12 / 5 * numDaysMissed }}.</h2>
+        </div>
+        <div class="col-md-6">
+            That's 500 Chipotle Burritos!
+        </div>
+        <div class="col-md-6">
+            Or 20 Macbooks!
+        </div>
     </div>
     <!-- /input-group -->
 </div>
