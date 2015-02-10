@@ -48,7 +48,7 @@
 <!-- Begin page content -->
 <div class="container content" ng-controller="SnowAppCtrl">
     <div class="page-header">
-        <h1>Price My Snowday</h1>
+        <h1>Snowing Money Fast</h1>
     </div>
     <p class="lead">Calculate your lost tuition from these snowstorms!</p>
 
@@ -57,21 +57,26 @@
         <autocomplete data="newSchoolList" ng-model="schoolName"
                       attr-placeholder="University Name" on-type="updateSchools"
                       on-select="selectSchool"></autocomplete>
-        <!-- {{(numDaysMissed)}} -->
         <div ng-if="selectedSchool && isPositiveInteger(numDaysMissed)"> 
             <div class="col-md-12">
                 <p>
                     Based on a 12 week semester...
                 </p>
-                <h2>You lost ${{ selectedSchool.tuition_and_fees / 12 / 5 * numDaysMissed }}.</h2>
+                <h2>You lost ${{ selectedSchool.tuition_and_fees / 12 / 5 * numDaysMissed | number:2 }}</h2>
             </div>
             <div class="col-md-6">
-                That's 500 Chipotle Burritos!
+            <h5>That's {{ selectedSchool.tuition_and_fees / 12 / 5 * numDaysMissed / 8 | number:1 }} Chipotle Burritos!</h5>
+            {% endverbatim %}
+            <img src="{% static "images/burrito.png" %}" width="270px" height="100px">
+            {% verbatim %}
             </div>
             <div class="col-md-6">
-                Or 20 Macbooks!
+            <h5>Or {{ selectedSchool.tuition_and_fees / 12 / 5 * numDaysMissed / 1200 | number:1 }} Macbooks!</h5>
+            {% endverbatim %}
+            <img src="{% static "images/macbook.png" %}" width="270px" height="100px">
+            {% verbatim %}
             </div>
-        </div> 
+        </div>
         <div ng-if="!(selectedSchool && isPositiveInteger(numDaysMissed))">
             Please Input a School
         </div>
